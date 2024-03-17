@@ -6,21 +6,7 @@ import getProductsData from "./ProductListingService";
 import Link from "next/link";
 
 const ProductListing = (props) => {
-  console.log(props.props)
-  // useEffect(() => {
-  //   fetchProductDetails();
-  //   console.log(productDetails);
-  //   // setProductDetails(...products);
-  // }, []);
 
-  // useEffect(() => {
-  //   console.log(productDetails);
-  // }, [productDetails]);
-
-  // const fetchProductDetails = async () => {
-  //   const response = await getProductsData();
-  //   setProductDetails(response);
-  // };
 
   return (
     <>
@@ -56,13 +42,5 @@ const ProductListing = (props) => {
   );
 };
 
-export async function getServerSideProps(context) {
-  const data = await getProductsData();
-  console.log(data);
-  return {
-    props: data,
-  }
-  
-}
 
 export default ProductListing;
