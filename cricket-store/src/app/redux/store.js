@@ -4,22 +4,23 @@ import cartReducer from "./cartSlice";
 import { configureStore } from "@reduxjs/toolkit";
 import { useEffect } from "react";
 
-let persistedState;
-
-useEffect(() => {
-  persistedState = loadState();
-}, []);
 
 const loadState = () => {
-  const loadedState = localStorage.getItem("state");
-  if (loadedState === null) return undefined;
-  return JSON.parse(loadedState);
+  if(typeof window !== 'undefined')
+  {
+    const loadedState = localStorage.getItem("state");
+    if (loadedState === null) return undefined;
+    return JSON.parse(loadedState);
+
+  }
 };
 
 const saveState = (state) => {
   const serializedState = JSON.stringify(state);
   localStorage.setItem("state", serializedState);
 };
+
+const persistedState = loadState();
 
 export const store = configureStore({
   reducer: {

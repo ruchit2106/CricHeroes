@@ -50,7 +50,7 @@ const Product = async (params) => {
             justifyContent={"space-between"}
           >
             <Typography variant="h5">₹500</Typography>
-            <AddToCardButton />
+            <AddToCardButton data={data}/>
           </Box>
         </Grid>
       </Grid>

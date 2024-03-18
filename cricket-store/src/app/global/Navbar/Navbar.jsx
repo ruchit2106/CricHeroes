@@ -16,17 +16,13 @@ import AdbIcon from "@mui/icons-material/Adb";
 import { useState } from "react";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import Link from "next/link";
-import Dialog from "@mui/material/Dialog";
-import DialogActions from "@mui/material/DialogActions";
-import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
-import DialogTitle from "@mui/material/DialogTitle";
+import { Cart } from "../Cart/Cart";
 
 const pages = ["Products", "Pricing", "Blog"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const Navbar = () => {
-  const [openCart, setCartOpen] = useState(false);
+  const [isCartOpen, setCartOpen] = useState(false);
 
   const handleCartOpen = () => {
     setCartOpen(true);
@@ -96,7 +92,7 @@ const Navbar = () => {
                   About
                 </Typography>
               </Link>
-              <Link href={"/contact"}>
+              <Link href={"/contact"} textDecoration="none">
                 <Typography
                   variant="h6"
                   noWrap
@@ -121,21 +117,7 @@ const Navbar = () => {
           </Box>
         </Container>
       </AppBar>
-      <Dialog open={openCart} onClose={handleCartClose}>
-        <DialogTitle textAlign={"center"}>Your Cart</DialogTitle>
-        <DialogContent>
-          <DialogContentText>
-            Let Google help apps determine location. This means sending
-            anonymous location data to Google, even when no apps are running.
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={handleCartClose}>Disagree</Button>
-          <Button onClick={handleCartClose} autoFocus>
-            Agree
-          </Button>
-        </DialogActions>
-      </Dialog>
+      <Cart isCartOpen={isCartOpen} handleCartClose={handleCartClose}/>
     </>
   );
 };

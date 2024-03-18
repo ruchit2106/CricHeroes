@@ -2,11 +2,15 @@
 
 import Button from "@mui/material/Button";
 import { useDispatch } from "react-redux";
+import { addItem } from "@/app/redux/cartSlice";
 
-const AddToCardButton = () => {
+const AddToCardButton = (data) => {
   const dispatch = useDispatch();
-
-  return <Button variant="contained">Add to Cart</Button>;
+  const addCart = () =>{
+   
+    dispatch(addItem(data));
+  }
+  return <Button variant="contained" onClick={addCart}>Add to Cart</Button>;
 };
 
 export default AddToCardButton;
