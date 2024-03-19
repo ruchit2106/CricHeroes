@@ -19,7 +19,6 @@ import Link from "next/link";
 import { Cart } from "../Cart/Cart";
 
 const pages = ["Products", "Pricing", "Blog"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const Navbar = () => {
   const [isCartOpen, setCartOpen] = useState(false);
@@ -111,13 +110,13 @@ const Navbar = () => {
                 </Typography>
               </Link>
             </Toolbar>
-            <Box sx={{ paddingTop: "0.8rem" }}>
+            <Button>
               <ShoppingCartIcon fontSize="large" onClick={handleCartOpen} />
-            </Box>
+            </Button>
           </Box>
         </Container>
       </AppBar>
-      <Cart isCartOpen={isCartOpen} handleCartClose={handleCartClose}/>
+      <Cart isCartOpen={isCartOpen} handleCartClose={handleCartClose} />
     </>
   );
 };
