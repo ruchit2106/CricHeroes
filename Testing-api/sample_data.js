@@ -3,6 +3,7 @@ const data = [
     Id: "1",
     Name: "MRF Bat",
     Availability: 10,
+    Category: 'Bat',
     Price: 500,
     URL: "/Bat.png",
     Description: "THIS IS A HEAVY BAT",
@@ -10,6 +11,7 @@ const data = [
   {
     Id: "2",
     Name: "Kookabura Ball",
+    Category: 'Ball',
     Availability: 12,
     Price: 200,
     URL: "/Ball.png",
@@ -17,8 +19,9 @@ const data = [
   },
   {
     Id: "3",
-    Name: "Stumps",
+    Name: "BoldFit Stumps",
     Availability: 13,
+    Category: 'Stumps',
     Price: 200,
     URL: "/Stumps.png",
     Description: "THIS IS A HEAVY STUMPS",
@@ -26,6 +29,7 @@ const data = [
   {
     Id: "4",
     Name: "SG Wicket Keeping Gloves",
+    Category: 'Gloves',
     Availability: 15,
     Price: 100,
     URL: "/Gloves.png",
@@ -34,6 +38,7 @@ const data = [
   {
     Id: "5",
     Name: "DSC Helmet",
+    Category: 'Helmet',
     Availability: 20,
     Price: 600,
     URL: "/Helmet.png",
@@ -42,6 +47,7 @@ const data = [
   {
     Id: "6",
     Name: "RK Pads",
+    Category: 'Pads',
     Availability: 16,
     Price: 50,
     URL: "/Pads.png",
@@ -51,6 +57,7 @@ const data = [
     Id: "7",
     Name: "Adidas Shoes",
     Availability: 50,
+    Category: 'Shoes',
     Price: 250,
     URL: "/Shoes.png",
     Description: "THIS IS A HEAVY SHOES",

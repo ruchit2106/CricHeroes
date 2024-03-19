@@ -38,7 +38,7 @@ const Product = async (params) => {
           <Typography variant="body1" sx={{ marginBottom: "1rem" }}>
             Availability:
             <Box component="span" fontWeight={"bold"}>
-              5
+              {data.Availability}
             </Box>
           </Typography>
           <Divider />

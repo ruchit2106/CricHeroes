@@ -46,14 +46,13 @@ export const Cart = ({ isCartOpen, handleCartClose }) => {
         </Box>
       </DialogContent>
       <DialogContent>
-        {products.map((product, index) => {
-          console.log(product.data);
+        {products.map((product) => {
+          console.log(product);
           return (
             <>
               <Box marginTop={"0.5rem"} marginBottom={"0.5rem"}>
                 <CartItems
-                  products={product.data}
-                  index={index}
+                  products={product}
                   removeProduct={removeProduct}
                 />
               </Box>
