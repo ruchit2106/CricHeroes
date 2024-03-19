@@ -1,4 +1,4 @@
-import Navbar from "./global/Navbar/Navbar";
+import Navbar from "@/global/Navbar/Navbar";
 import { Providers } from "./providers";
 
 export default function RootLayout({ children }) {

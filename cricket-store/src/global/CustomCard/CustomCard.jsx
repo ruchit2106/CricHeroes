@@ -1,16 +1,10 @@
-import {
-  Card,
-  CardContent,
-  Typography,
-  CardMedia,
-  Box,
-  CardHeader,
-} from "@mui/material";
+import { Card, CardContent, CardMedia } from "@mui/material";
 
 const CustomCard = (props) => {
   return (
     <Card
       sx={{
+        width: "12rem",
         "&:hover": {
           backgroundColor: "rgb(236, 236, 236)",
         },
@@ -22,8 +16,10 @@ const CustomCard = (props) => {
         image={props.url}
         alt="Paella dish"
       />
-      <CardContent sx={{textAlign:"center"}}>{props.heading}</CardContent>
-      <CardContent sx={{textAlign:"center"}}>{props.description}</CardContent>
+      <CardContent sx={{ textAlign: "center" }}>{props.heading}</CardContent>
+      <CardContent sx={{ textAlign: "center" }}>
+        {props.description}
+      </CardContent>
       <CardContent>PRICE</CardContent>
     </Card>
   );

@@ -3,22 +3,13 @@
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
-import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
-import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
 import { useState } from "react";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import Link from "next/link";
-import { Cart } from "../Cart/Cart";
-
-const pages = ["Products", "Pricing", "Blog"];
+import { Cart } from "@/Cart/Cart";
 
 const Navbar = () => {
   const [isCartOpen, setCartOpen] = useState(false);
@@ -110,7 +101,7 @@ const Navbar = () => {
                 </Typography>
               </Link>
             </Toolbar>
-            <Button>
+            <Button sx={{ color: "white" }}>
               <ShoppingCartIcon fontSize="large" onClick={handleCartOpen} />
             </Button>
           </Box>
