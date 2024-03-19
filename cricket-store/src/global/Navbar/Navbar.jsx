@@ -28,78 +28,74 @@ const Navbar = () => {
         <Container maxWidth="xl" disableGutters>
           <Box display={"flex"} justifyContent={"space-between"}>
             <Toolbar disableGutters>
-              <Link href={"/"}>
-                <Typography
-                  variant="h6"
-                  noWrap
-                  component="a"
-                  sx={{
-                    mr: 2,
-                    display: { xs: "none", md: "flex" },
-                    fontFamily: "monospace",
-                    fontWeight: 700,
-                    letterSpacing: ".1rem",
-
-                    textDecoration: "none",
-                  }}
+              <Button sx={{ color: "white" }}>
+                <Link
+                  href={"/"}
+                  style={{ textDecoration: "none", color: "inherit" }}
                 >
-                  CricHeroes
-                </Typography>
-              </Link>
-              <Link href={"/products"}>
-                <Typography
-                  variant="h6"
-                  noWrap
-                  component="a"
-                  sx={{
-                    mr: 2,
-                    display: { xs: "none", md: "flex" },
-                    fontFamily: "monospace",
-                    fontWeight: 700,
-                    letterSpacing: ".1rem",
-
-                    textDecoration: "none",
-                  }}
+                  <Typography
+                    variant="h6"
+                    fontWeight={"bold"}
+                    component="a"
+                    sx={{
+                      mr: 2,
+                    }}
+                  >
+                    CricHeroes
+                  </Typography>
+                </Link>
+              </Button>
+              <Button sx={{ color: "white" }}>
+                <Link
+                  href={"/products"}
+                  style={{ textDecoration: "none", color: "inherit" }}
                 >
-                  Products
-                </Typography>
-              </Link>
-              <Link href={"/about"}>
-                <Typography
-                  variant="h6"
-                  noWrap
-                  component="a"
-                  sx={{
-                    mr: 2,
-                    display: { xs: "none", md: "flex" },
-                    fontFamily: "monospace",
-                    fontWeight: 700,
-                    letterSpacing: ".1rem",
-
-                    textDecoration: "none",
-                  }}
+                  <Typography
+                    variant="h6"
+                    fontWeight={"bold"}
+                    component="a"
+                    sx={{
+                      mr: 2,
+                    }}
+                  >
+                    Products
+                  </Typography>
+                </Link>
+              </Button>
+              <Button sx={{ color: "white" }}>
+                <Link
+                  href={"/about"}
+                  style={{ textDecoration: "none", color: "inherit" }}
                 >
-                  About
-                </Typography>
-              </Link>
-              <Link href={"/contact"} textDecoration="none">
-                <Typography
-                  variant="h6"
-                  noWrap
-                  component="a"
-                  sx={{
-                    mr: 2,
-                    display: { xs: "none", md: "flex" },
-                    fontFamily: "monospace",
-                    fontWeight: 700,
-                    letterSpacing: ".1rem",
-
-                    textDecoration: "none",
-                  }}
+                  <Typography
+                    variant="h6"
+                    fontWeight={"bold"}
+                    component="a"
+                    sx={{
+                      mr: 2,
+                    }}
+                  >
+                    About
+                  </Typography>
+                </Link>
+              </Button>
+              <Button sx={{ color: "white" }}>
+                <Link
+                  href={"/contact"}
+                  style={{ textDecoration: "none", color: "inherit" }}
                 >
-                  Contact Us
-                </Typography>
-              </Link>
+                  <Typography
+                    variant="h6"
+                    fontWeight={"bold"}
+                    component="a"
+                    sx={{
+                      mr: 2,
+                    }}
+                  >
+                    Contact Us
+                  </Typography>
+                </Link>
+              </Button>
             </Toolbar>
             <Button sx={{ color: "white" }}>
               <ShoppingCartIcon fontSize="large" onClick={handleCartOpen} />
