@@ -50,11 +50,13 @@ export const Cart = ({ isCartOpen, handleCartClose }) => {
           console.log(product.data);
           return (
             <>
-              <CartItems
-                products={product.data}
-                index={index}
-                removeProduct={removeProduct}
-              />
+              <Box marginTop={"0.5rem"} marginBottom={"0.5rem"}>
+                <CartItems
+                  products={product.data}
+                  index={index}
+                  removeProduct={removeProduct}
+                />
+              </Box>
               <Divider />
             </>
           );
