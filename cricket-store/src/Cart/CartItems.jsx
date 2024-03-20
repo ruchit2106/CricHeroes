@@ -7,28 +7,28 @@ import IconButton from "@mui/material/IconButton";
 const CartItems = ({ products, increaseProductQty, decreaseProductQty }) => {
   return (
     <Box display={"flex"} justifyContent={"space-between"}>
-      <img src={products.URL} width={60} height={60} />
+      <img src={products.url} width={60} height={60} />
       <Typography variant="h6" marginTop={"0.8rem"} fontWeight={"bold"}>
-        {products.Name}
+        {products.name}
       </Typography>
       <Typography variant="h6" marginTop={"0.8rem"} fontWeight={"bold"}>
-        ₹{products.Price}
+        ₹{products.price}
       </Typography>
 
       <Box sx={{ marginTop: "0.5rem" }}>
         <IconButton
           onClick={() => {
-            decreaseProductQty(products.Id);
+            decreaseProductQty(products.id);
           }}
         >
           <RemoveCircleOutlineIcon />
         </IconButton>
         <Box component={"span"} fontWeight={"bold"}>
-          {products.Quantity}
+          {products.quantity}
         </Box>
         <IconButton
           onClick={() => {
-            increaseProductQty(products.Id);
+            increaseProductQty(products.id);
           }}
         >
           <AddCircleOutlineIcon />

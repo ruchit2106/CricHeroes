@@ -8,9 +8,9 @@ import Alert from "@mui/material/Alert";
 import Snackbar from "@mui/material/Snackbar";
 
 const AddToCardButton = (data) => {
-  const { Id, URL, Name, Price } = data.data;
-  const Quantity = 1;
-  const newItem = { Id, URL, Name, Price, Quantity };
+  const { id, url, name, price } = data.data;
+  const quantity = 1;
+  const newItem = { id, url, name, price, quantity };
 
   const [open, setOpen] = useState(false);
   const dispatch = useDispatch();

@@ -6,5 +6,12 @@ export const getAllProducts = (req, res) => {
 
 export const getProductById = (req, res) => {
   const { productId } = req.params;
-  res.json(data[productId - 1]);
+
+  const product = data.filter((element) => {
+    if (element.id == productId) return element;
+  });
+
+  console.log(product);
+
+  res.json(product[0]);
 };

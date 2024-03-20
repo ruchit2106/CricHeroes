@@ -24,15 +24,15 @@ const ProductListing = (props) => {
             return (
               <Grid item>
                 <Link
-                  href={`/product/${product.Id}`}
+                  href={`/product/${product.id}`}
                   style={{ textDecoration: "none", color: "inherit" }}
                 >
                   <Box>
                     <CustomCard
-                      heading={product.Name}
-                      url={product.URL}
-                      description={product.Description}
-                      price={product.Price}
+                      heading={product.name}
+                      url={product.url}
+                      description={product.shortDesc}
+                      price={product.price}
                     />
                   </Box>
                 </Link>

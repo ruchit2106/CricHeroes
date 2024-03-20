@@ -15,12 +15,12 @@ const Product = async (params) => {
       <Grid container>
         <Grid item xs={6}>
           <Container sx={{ textAlign: "center" }}>
-            <img src={data.URL} width={300} height={300} />
+            <img src={data.url} width={300} height={300} />
           </Container>
         </Grid>
         <Grid item xs={6}>
           <Typography variant="h4" fontWeight={"bold"}>
-            {data.Name}
+            {data.name}
           </Typography>
           <Box sx={{ marginBottom: "1rem" }}>
             <Rating
@@ -33,12 +33,12 @@ const Product = async (params) => {
             />
           </Box>
           <Typography variant="body1" sx={{ marginBottom: "1rem" }}>
-            {data.Description}
+            {data.shortDesc}
           </Typography>
           <Typography variant="body1" sx={{ marginBottom: "1rem" }}>
             Availability:
             <Box component="span" fontWeight={"bold"}>
-              {data.Availability}
+              {data.availability}
             </Box>
           </Typography>
           <Divider />
@@ -47,7 +47,7 @@ const Product = async (params) => {
             sx={{ marginTop: "1rem" }}
             justifyContent={"space-between"}
           >
-            <Typography variant="h5">₹{data.Price}</Typography>
+            <Typography variant="h5">₹{data.price}</Typography>
             <AddToCardButton data={data} />
           </Box>
         </Grid>

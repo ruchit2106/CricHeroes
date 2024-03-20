@@ -8,14 +8,14 @@ const stateIterationFunction = (state, productId, operationType) => {
   let i = 0;
   for (i; i < state.length; i++) {
     // Check if the current object's ID matches the given ID
-    if (state[i].Id === productId) {
+    if (state[i].id === productId) {
       // Return the object if found
 
       if (operationType == "add") {
-        ++state[i].Quantity;
+        ++state[i].quantity;
       } else if (operationType == "remove") {
-        --state[i].Quantity;
-        if (state[i].Quantity == 0) {
+        --state[i].quantity;
+        if (state[i].quantity == 0) {
           state.splice(i, 1);
         }
       }
@@ -32,7 +32,7 @@ export const cartSlice = createSlice({
   initialState,
   reducers: {
     addItem: (state, action) => {
-      if (!stateIterationFunction(state, action.payload.Id, "add"))
+      if (!stateIterationFunction(state, action.payload.id, "add"))
         state.push(action.payload);
     },
     increaseQty: (state, action) => {
