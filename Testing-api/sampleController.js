@@ -4,9 +4,7 @@ export const getAllProducts = (req, res) => {
   res.json(data);
 };
 
-export const getProductById = (req , res) => {
-  const {productId} = req.params;
-  console.log(productId);
-  res.json(data[productId-1]);
-}
-
+export const getProductById = (req, res) => {
+  const { productId } = req.params;
+  res.json(data[productId - 1]);
+};

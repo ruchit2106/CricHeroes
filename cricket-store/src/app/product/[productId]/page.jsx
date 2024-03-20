@@ -25,7 +25,7 @@ const Product = async (params) => {
           <Box sx={{ marginBottom: "1rem" }}>
             <Rating
               name="text-feedback"
-              value={5}
+              value={3}
               size="small"
               readOnly
               precision={0.5}

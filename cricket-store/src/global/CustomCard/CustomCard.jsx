@@ -9,6 +9,7 @@ const CustomCard = (props) => {
         "&:hover": {
           backgroundColor: "rgb(236, 236, 236)",
           scale: "1.05",
+          boxShadow: "10",
         },
       }}
     >

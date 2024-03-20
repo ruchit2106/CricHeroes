@@ -52,7 +52,6 @@ export const Cart = ({ isCartOpen, handleCartClose }) => {
       </DialogContent>
       <DialogContent>
         {products.map((product) => {
-          console.log(product);
           return (
             <>
               <Box marginTop={"0.5rem"} marginBottom={"0.5rem"}>

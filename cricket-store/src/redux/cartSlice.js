@@ -4,12 +4,13 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = [];
 
-const stateIterationFunction = (state, action, operationType) => {
+const stateIterationFunction = (state, productId, operationType) => {
   let i = 0;
   for (i; i < state.length; i++) {
     // Check if the current object's ID matches the given ID
-    if (state[i].Id === action.payload.Id) {
+    if (state[i].Id === productId) {
       // Return the object if found
+
       if (operationType == "add") {
         ++state[i].Quantity;
       } else if (operationType == "remove") {
@@ -31,14 +32,14 @@ export const cartSlice = createSlice({
   initialState,
   reducers: {
     addItem: (state, action) => {
-      if (!stateIterationFunction(state, action, "add"))
+      if (!stateIterationFunction(state, action.payload.Id, "add"))
         state.push(action.payload);
     },
     increaseQty: (state, action) => {
-      stateIterationFunction(state, action, "add");
+      stateIterationFunction(state, action.payload, "add");
     },
     decreaseQty: (state, action) => {
-      stateIterationFunction(state, action, "remove");
+      stateIterationFunction(state, action.payload, "remove");
     },
     emptyCart: (state) => {
       state.length = 0;

@@ -28,8 +28,6 @@ const AddToCardButton = (data) => {
     setOpen(false);
   };
 
-  console.log(newItem);
-
   return (
     <>
       <Button variant="contained" onClick={addCart}>

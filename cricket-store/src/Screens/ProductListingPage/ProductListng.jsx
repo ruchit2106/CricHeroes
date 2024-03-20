@@ -7,7 +7,7 @@ import Link from "next/link";
 const ProductListing = (props) => {
   return (
     <>
-      <Box sx={{ textAlign: "center", marginBottom: "1rem" }}>
+      <Box sx={{ textAlign: "center", marginBottom: "2.5rem" }}>
         <Typography variant={"h4"} fontWeight={"bold"}>
           Products
         </Typography>
