@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Typography from "@mui/material/Typography";
 import { Container } from "@mui/material";
 
@@ -10,12 +9,6 @@ const Home = () => {
           CRICKET STORE
         </Typography>
       </Container>
-      {/* <Image
-          // src="/Cricket.jfif"
-          layout="fill"
-          objectFit="cover"
-          quality={100}
-        /> */}
     </>
   );
 };

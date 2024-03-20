@@ -4,18 +4,41 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = [];
 
+const stateIterationFunction = (state, action, operationType) => {
+  let i = 0;
+  for (i; i < state.length; i++) {
+    // Check if the current object's ID matches the given ID
+    if (state[i].Id === action.payload.Id) {
+      // Return the object if found
+      if (operationType == "add") {
+        ++state[i].Quantity;
+      } else if (operationType == "remove") {
+        --state[i].Quantity;
+        if (state[i].Quantity == 0) {
+          state.splice(i, 1);
+        }
+      }
+      break;
+    }
+  }
+  if (i == state.length) return false;
+
+  return true;
+};
+
 export const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
     addItem: (state, action) => {
-      console.log(JSON.stringify(state));
-      console.log(action);
-      state.push(action.payload);
+      if (!stateIterationFunction(state, action, "add"))
+        state.push(action.payload);
     },
-    removeItem: (state, action) => {
-      state.splice(action.payload, 1);
-      console.log(state);
+    increaseQty: (state, action) => {
+      stateIterationFunction(state, action, "add");
+    },
+    decreaseQty: (state, action) => {
+      stateIterationFunction(state, action, "remove");
     },
     emptyCart: (state) => {
       state.length = 0;
@@ -24,8 +47,9 @@ export const cartSlice = createSlice({
 });
 
 export const { addItem } = cartSlice.actions;
-export const { removeItem } = cartSlice.actions;
 export const { emptyCart } = cartSlice.actions;
+export const { increaseQty } = cartSlice.actions;
+export const { decreaseQty } = cartSlice.actions;
 
 export const selectProducts = (state) => state.cartReducer;
 export default cartSlice.reducer;

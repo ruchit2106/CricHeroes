@@ -8,8 +8,9 @@ import DialogTitle from "@mui/material/DialogTitle";
 import Button from "@mui/material/Button";
 import { useSelector } from "react-redux";
 import { selectProducts } from "@/redux/cartSlice";
-import { removeItem } from "@/redux/cartSlice";
 import { emptyCart } from "@/redux/cartSlice";
+import { increaseQty } from "@/redux/cartSlice";
+import { decreaseQty } from "@/redux/cartSlice";
 import CartItems from "./CartItems";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
@@ -21,8 +22,12 @@ export const Cart = ({ isCartOpen, handleCartClose }) => {
 
   const products = useSelector(selectProducts);
 
-  const removeProduct = (index) => {
-    dispatch(removeItem(index));
+  const decreaseProductQty = (productId) => {
+    dispatch(decreaseQty(productId));
+  };
+
+  const increaseProductQty = (productId) => {
+    dispatch(increaseQty(productId));
   };
 
   const clearCart = () => {
@@ -34,7 +39,7 @@ export const Cart = ({ isCartOpen, handleCartClose }) => {
       open={isCartOpen}
       onClose={handleCartClose}
       fullWidth
-      maxWidth={"xs"}
+      maxWidth={"sm"}
     >
       <DialogTitle fontWeight={"bold"} textAlign={"center"}>
         Your Cart
@@ -53,7 +58,8 @@ export const Cart = ({ isCartOpen, handleCartClose }) => {
               <Box marginTop={"0.5rem"} marginBottom={"0.5rem"}>
                 <CartItems
                   products={product}
-                  removeProduct={removeProduct}
+                  decreaseProductQty={decreaseProductQty}
+                  increaseProductQty={increaseProductQty}
                 />
               </Box>
               <Divider />

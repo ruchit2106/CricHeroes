@@ -8,6 +8,7 @@ const CustomCard = (props) => {
         width: "12rem",
         "&:hover": {
           backgroundColor: "rgb(236, 236, 236)",
+          scale: "1.05",
         },
       }}
     >
