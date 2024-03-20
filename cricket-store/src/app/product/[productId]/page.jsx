@@ -33,7 +33,7 @@ const Product = async (params) => {
             />
           </Box>
           <Typography variant="body1" sx={{ marginBottom: "1rem" }}>
-            {data.shortDesc}
+            {data.detailDesc}
           </Typography>
           <Typography variant="body1" sx={{ marginBottom: "1rem" }}>
             Availability:

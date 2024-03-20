@@ -24,7 +24,7 @@ const Navbar = () => {
 
   return (
     <>
-      <AppBar position="sticky">
+      <AppBar position="sticky" color={"warning"}>
         <Container maxWidth="xl" disableGutters>
           <Box display={"flex"} justifyContent={"space-between"}>
             <Toolbar disableGutters>
@@ -41,7 +41,7 @@ const Navbar = () => {
                       mr: 2,
                     }}
                   >
-                    CricHeroes
+                    CricketStore
                   </Typography>
                 </Link>
               </Button>

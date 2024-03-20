@@ -7,6 +7,7 @@ const data = [
     price: 500,
     url: "/Bat.png",
     shortDesc: "MRF Bat with Grip",
+    detailDesc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, dolores! Enim consequuntur odit corporis veniam ipsam rem laborum fuga maiores?"
   },
   {
     id: "2",
@@ -16,6 +17,7 @@ const data = [
     price: 200,
     url: "/Ball.png",
     shortDesc: "Kookabura red Ball",
+    detailDesc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, dolores! Enim consequuntur odit corporis veniam ipsam rem laborum fuga maiores?"
   },
   {
     id: "3",
@@ -25,6 +27,7 @@ const data = [
     price: 200,
     url: "/Stumps.png",
     shortDesc: "BoldFit Stumps with Bails",
+    detailDesc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, dolores! Enim consequuntur odit corporis veniam ipsam rem laborum fuga maiores?"
   },
   {
     id: "4",
@@ -34,6 +37,7 @@ const data = [
     price: 100,
     url: "/Gloves.png",
     shortDesc: "SG WicketKeeping Gloves with inners",
+    detailDesc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, dolores! Enim consequuntur odit corporis veniam ipsam rem laborum fuga maiores?"
   },
   {
     id: "5",
@@ -43,6 +47,7 @@ const data = [
     price: 600,
     url: "/Helmet.png",
     shortDesc: "DSC Helmet with inner protection",
+    detailDesc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, dolores! Enim consequuntur odit corporis veniam ipsam rem laborum fuga maiores?"
   },
   {
     id: "6",
@@ -52,6 +57,7 @@ const data = [
     price: 50,
     url: "/Pads.png",
     shortDesc: "RK cushion gloves",
+    detailDesc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, dolores! Enim consequuntur odit corporis veniam ipsam rem laborum fuga maiores?"
   },
   {
     id: "7",
@@ -61,6 +67,7 @@ const data = [
     price: 250,
     url: "/Shoes.png",
     shortDesc: "Adidas Running Shoes",
+    detailDesc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, dolores! Enim consequuntur odit corporis veniam ipsam rem laborum fuga maiores?"
   },
 ];
 
