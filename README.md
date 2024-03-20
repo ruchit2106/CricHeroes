@@ -1,7 +1,7 @@
 # CricHeroes
 
 For Next app:
-npm run dev
+```npm run dev```
 
 For node server:
-node index.js
+```node index.js```
