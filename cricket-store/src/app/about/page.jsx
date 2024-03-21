@@ -7,9 +7,9 @@ const About = () => {
     <>
       <Container>
         <Typography variant="h5" textAlign={"center"} marginTop={"10rem"} >
-            "Empowering cricketers worldwide with premium gear"
+            Empowering cricketers worldwide with premium gear
           <Box  fontWeight={"bold"}>
-          We're your ultimate destination for all things cricket 
+          We are your ultimate destination for all things cricket 
           </Box>
         </Typography>
       </Container>

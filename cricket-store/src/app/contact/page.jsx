@@ -10,7 +10,7 @@ const Contact = () => {
           <Box fontWeight={"bold"}>
           Contact Us
           </Box>
-          Need help? Tell us more and we'll be happy to assist you
+          Need help? Tell us more and we will be happy to assist you
         </Typography>
       </Container>
     </>

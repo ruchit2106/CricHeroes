@@ -6,6 +6,7 @@ import Rating from "@mui/material/Rating";
 import StarIcon from "@mui/icons-material/Star";
 import Divider from "@mui/material/Divider";
 import AddToCardButton from "@/Cart/AddToCardButton";
+import Image from "next/image";
 
 const Product = async (params) => {
   const data = await getProductDataById(params.params.productId);
@@ -15,7 +16,7 @@ const Product = async (params) => {
       <Grid container>
         <Grid item xs={6}>
           <Container sx={{ textAlign: "center" }}>
-            <img src={data.url} width={300} height={300} />
+            <Image src={data.url} width={300} height={300} />
           </Container>
         </Grid>
         <Grid item xs={6}>

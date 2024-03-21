@@ -3,11 +3,12 @@ import Typography from "@mui/material/Typography";
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
 import IconButton from "@mui/material/IconButton";
+import Image from "next/image";
 
 const CartItems = ({ products, increaseProductQty, decreaseProductQty }) => {
   return (
     <Box display={"flex"} justifyContent={"space-between"}>
-      <img src={products.url} width={60} height={60} />
+      <Image src={products.url} width={60} height={60} />
       <Typography variant="h6" marginTop={"0.8rem"} fontWeight={"bold"}>
         {products.name}
       </Typography>

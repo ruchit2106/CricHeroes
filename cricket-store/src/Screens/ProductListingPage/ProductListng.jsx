@@ -20,9 +20,9 @@ const ProductListing = (props) => {
           alignItems={"center"}
           maxWidth={"800px"}
         >
-          {props.props.map((product) => {
+          {props.props.map((product,index) => {
             return (
-              <Grid item>
+              <Grid item key={index}>
                 <Link
                   href={`/product/${product.id}`}
                   style={{ textDecoration: "none", color: "inherit" }}
