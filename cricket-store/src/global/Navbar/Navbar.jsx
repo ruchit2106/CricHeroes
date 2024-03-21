@@ -31,69 +31,41 @@ const Navbar = () => {
               <Button sx={{ color: "white" }}>
                 <Link
                   href={"/"}
-                  style={{ textDecoration: "none", color: "inherit" }}
+                  style={{ textDecoration: "none", color: "inherit", fontWeight: "bold", marginLeft: "1rem", fontSize:"1.1rem" }}
                 >
-                  <Typography
-                    variant="h6"
-                    fontWeight={"bold"}
-                    component="a"
-                    sx={{
-                      mr: 2,
-                    }}
-                  >
-                    CricketStore
-                  </Typography>
+
+                  CricketStore
+
                 </Link>
               </Button>
               <Button sx={{ color: "white" }}>
                 <Link
                   href={"/products"}
-                  style={{ textDecoration: "none", color: "inherit" }}
+                  style={{ textDecoration: "none", color: "inherit", fontWeight: "bold", fontSize:"1.1rem"}}
                 >
-                  <Typography
-                    variant="h6"
-                    fontWeight={"bold"}
-                    component="a"
-                    sx={{
-                      mr: 2,
-                    }}
-                  >
-                    Products
-                  </Typography>
+
+                  Products
+
                 </Link>
               </Button>
               <Button sx={{ color: "white" }}>
                 <Link
                   href={"/about"}
-                  style={{ textDecoration: "none", color: "inherit" }}
+                  style={{ textDecoration: "none", color: "inherit", fontWeight: "bold", fontSize:"1.1rem" }}
                 >
-                  <Typography
-                    variant="h6"
-                    fontWeight={"bold"}
-                    component="a"
-                    sx={{
-                      mr: 2,
-                    }}
-                  >
-                    About
-                  </Typography>
+
+                  About
+
                 </Link>
               </Button>
               <Button sx={{ color: "white" }}>
                 <Link
                   href={"/contact"}
-                  style={{ textDecoration: "none", color: "inherit" }}
+                  style={{ textDecoration: "none", color: "inherit", fontWeight: "bold" , fontSize:"1.1rem" }}
                 >
-                  <Typography
-                    variant="h6"
-                    fontWeight={"bold"}
-                    component="a"
-                    sx={{
-                      mr: 2,
-                    }}
-                  >
-                    Contact Us
-                  </Typography>
+
+                  Contact Us
+
                 </Link>
               </Button>
             </Toolbar>
