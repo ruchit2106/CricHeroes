@@ -6,7 +6,7 @@ import Typography from "@mui/material/Typography";
 import Rating from "@mui/material/Rating";
 import StarIcon from "@mui/icons-material/Star";
 import Divider from "@mui/material/Divider";
-import { addItem } from "@/redux/cartSlice";
+import { addItem } from "@/state/cartSlice";
 import Button from "@mui/material/Button";
 import Image from "next/image";
 import { useState } from "react";
