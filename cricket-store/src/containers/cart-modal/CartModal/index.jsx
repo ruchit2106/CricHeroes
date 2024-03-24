@@ -11,10 +11,9 @@ import { selectProducts } from "@/redux/cartSlice";
 import { emptyCart } from "@/redux/cartSlice";
 import { increaseQty } from "@/redux/cartSlice";
 import { decreaseQty } from "@/redux/cartSlice";
-import CartItems from "./CartItems";
+import CartItems from "../CartItems";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
-import { getTotalAmount } from "./CartServices";
 import { useDispatch } from "react-redux";
 
 export const Cart = ({ isCartOpen, handleCartClose }) => {
@@ -33,6 +32,16 @@ export const Cart = ({ isCartOpen, handleCartClose }) => {
   const clearCart = () => {
     dispatch(emptyCart());
   };
+
+
+  const getTotalAmount = (products) => {
+    let totalAmount = 0;
+    products.forEach((element) => {
+      totalAmount += element.price * element.quantity;
+    });
+    return totalAmount;
+  };
+
 
   return (
     <Dialog

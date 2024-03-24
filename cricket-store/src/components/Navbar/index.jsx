@@ -8,7 +8,7 @@ import Button from "@mui/material/Button";
 import { useState } from "react";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import Link from "next/link";
-import { Cart } from "@/Cart/Cart";
+import { Cart } from "@/containers/cart-modal/CartModal";
 
 const Navbar = () => {
   const [isCartOpen, setCartOpen] = useState(false);
