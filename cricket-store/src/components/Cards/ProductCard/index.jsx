@@ -1,7 +1,7 @@
 import { Card, CardContent, CardMedia } from "@mui/material";
 import Typography from "@mui/material/Typography";
 
-const CustomCard = (props) => {
+const ProductCard = (props) => {
   return (
     <Card
       sx={{
@@ -36,4 +36,4 @@ const CustomCard = (props) => {
   );
 };
 
-export default CustomCard;
+export default ProductCard;

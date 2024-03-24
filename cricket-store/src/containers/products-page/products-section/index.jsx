@@ -1,10 +1,10 @@
 import Box from "@mui/material/Box";
 import { Grid } from "@mui/material";
-import CustomCard from "@/global/CustomCard/CustomCard";
+import ProductCard from "@/components/Cards/ProductCard";
 import Typography from "@mui/material/Typography";
 import Link from "next/link";
 
-const ProductListing = (props) => {
+const ProductItems = (props) => {
   return (
     <>
       <Box sx={{ textAlign: "center", marginBottom: "2.5rem" }}>
@@ -28,7 +28,7 @@ const ProductListing = (props) => {
                   style={{ textDecoration: "none", color: "inherit" }}
                 >
                   <Box>
-                    <CustomCard
+                    <ProductCard
                       heading={product.name}
                       url={product.url}
                       description={product.shortDesc}
@@ -45,4 +45,4 @@ const ProductListing = (props) => {
   );
 };
 
-export default ProductListing;
+export default ProductItems;
