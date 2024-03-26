@@ -9,8 +9,9 @@ import Divider from "@mui/material/Divider";
 import { addItem } from "@/state/cartSlice";
 import Button from "@mui/material/Button";
 import Image from "next/image";
-import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { ToastContainer, toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 
 const ProductItem = ({ data }) => {
@@ -20,8 +21,15 @@ const ProductItem = ({ data }) => {
 
   const dispatch = useDispatch();
 
+  const showToastMessage = () =>{
+    toast.success("ITEM ADDED TO CART ", {
+      position:"bottom-left",
+    });
+  }
+  
   const addToCart = () => {
     dispatch(addItem(newItem));
+    showToastMessage();
   };
 
   return (
@@ -63,6 +71,7 @@ const ProductItem = ({ data }) => {
           >
             <Typography variant="h5">₹{data.price}</Typography>
             <Button variant="contained" onClick={addToCart}>Add to Cart</Button>
+            <ToastContainer hideProgressBar={true} autoClose={2500}/>
           </Box>
         </Grid>
       </Grid>
