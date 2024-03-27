@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import Box from "@mui/material/Box";
 import { Grid, Container } from "@mui/material";
@@ -12,34 +12,40 @@ import Image from "next/image";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import { selectProducts } from "@/state/cartSlice";
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Tooltip from '@mui/material/Tooltip';
+import Tooltip from "@mui/material/Tooltip";
+import { useEffect } from "react";
+import { useState } from "react";
 
 const ProductItem = ({ data }) => {
   const { id, url, name, price, availability } = data;
   const quantity = 1;
   const newItem = { id, url, name, price, quantity, availability };
-
+  const [shouldAddToCartDisplay, setAddToCartDisplay] = useState(false);
   const dispatch = useDispatch();
 
   const products = useSelector(selectProducts);
+
+  useEffect(() => {
+    setAddToCartDisplay(shouldButtonDisplayed());
+  }, [products]);
 
   const showToastMessage = () => {
     toast.success("ITEM ADDED TO CART ", {
       position: "bottom-left",
     });
-  }
+  };
 
   const shouldButtonDisplayed = () => {
-    const index = products.findIndex(product => product.id == id);
+    const index = products.findIndex((product) => product.id == id);
 
-
-    if (availability == 0 || (index != -1 && products[index].quantity == products[index].availability))
-      return false;
-
-    return true;
-  }
+    return !(
+      availability === 0 ||
+      (index !== -1 &&
+        products[index].quantity === products[index].availability)
+    );
+  };
 
   const addToCart = () => {
     dispatch(addItem(newItem));
@@ -84,18 +90,17 @@ const ProductItem = ({ data }) => {
             justifyContent={"space-between"}
           >
             <Typography variant="h5">₹{data.price}</Typography>
-            {shouldButtonDisplayed() ?
-              (
-              <Button variant="contained" onClick={addToCart} >
+            {shouldAddToCartDisplay ? (
+              <Button variant="contained" onClick={addToCart}>
                 Add to Cart
               </Button>
-              )
-              :
-              (
-              // <Tooltip title="You've Reached Maximum Availability">
-                <Button disabled={true}>NO</Button>
-              // </Tooltip>
-              )}
+            ) : (
+              <Tooltip title="You've Reached Maximum Availability">
+                <Button disabled variant="contained">
+                  NO
+                </Button>
+              </Tooltip>
+            )}
             <ToastContainer hideProgressBar={true} autoClose={2500} />
           </Box>
         </Grid>

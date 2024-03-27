@@ -8,12 +8,10 @@ const getProductDataById = async (productId) => {
 };
 
 const Product = async (params) => {
-  "use state"
+  "use state";
   const data = await getProductDataById(params.params.productId);
 
-  return (
-    <ProductItem data={data} />
-  );
+  return <ProductItem data={data} />;
 };
 
 export default Product;
