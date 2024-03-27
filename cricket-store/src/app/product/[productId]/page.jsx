@@ -8,7 +8,7 @@ const getProductDataById = async (productId) => {
 };
 
 const Product = async (params) => {
-  "use state";
+  "use server";
   const data = await getProductDataById(params.params.productId);
 
   return <ProductItem data={data} />;

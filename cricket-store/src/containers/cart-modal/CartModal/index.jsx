@@ -18,7 +18,6 @@ import { useDispatch } from "react-redux";
 
 export const Cart = ({ isCartOpen, handleCartClose }) => {
   const dispatch = useDispatch();
-
   const products = useSelector(selectProducts);
 
   const decreaseProductQty = (productId) => {
@@ -34,13 +33,12 @@ export const Cart = ({ isCartOpen, handleCartClose }) => {
   };
 
   const shouldProductAdd = (productId) => {
-    const index = products.findIndex(product => product.id == productId);
-
-    if (index != -1 && products[index].quantity == products[index].availability)
-      return false;
-
-    return true;
-  }
+    const index = products.findIndex((product) => product.id == productId);
+    console.log("NOT WITH", productId);
+    return !(
+      index !== -1 && products[index].quantity === products[index].availability
+    );
+  };
   const getTotalAmount = (products) => {
     let totalAmount = 0;
     products.forEach((element) => {
@@ -48,7 +46,6 @@ export const Cart = ({ isCartOpen, handleCartClose }) => {
     });
     return totalAmount;
   };
-
 
   return (
     <Dialog

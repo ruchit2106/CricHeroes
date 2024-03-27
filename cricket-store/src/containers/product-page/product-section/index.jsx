@@ -79,7 +79,7 @@ const ProductItem = ({ data }) => {
           </Typography>
           <Typography variant="body1" sx={{ marginBottom: "1rem" }}>
             Availability:
-            <Box component="span" fontWeight={"bold"}>
+            <Box component="span" fontWeight={"bold"} color={"green"}>
               {data.availability}
             </Box>
           </Typography>
@@ -95,10 +95,12 @@ const ProductItem = ({ data }) => {
                 Add to Cart
               </Button>
             ) : (
-              <Tooltip title="You've Reached Maximum Availability">
-                <Button disabled variant="contained">
-                  NO
-                </Button>
+              <Tooltip title="You've Reached Maximum Limit / Item is Out of Stock">
+                <Box component={"span"} sx={{ cursor: "no-drop" }}>
+                  <Button disabled variant="contained">
+                    Add to Cart
+                  </Button>
+                </Box>
               </Tooltip>
             )}
             <ToastContainer hideProgressBar={true} autoClose={2500} />
