@@ -5,7 +5,7 @@ import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
 import IconButton from "@mui/material/IconButton";
 import Image from "next/image";
 
-const CartItems = ({ products, increaseProductQty, decreaseProductQty }) => {
+const CartItems = ({ products, increaseProductQty, decreaseProductQty, shouldProductAdd}) => {
   return (
     <Box display={"flex"} justifyContent={"space-between"}>
       <Image src={products.url} width={60} height={60} />
@@ -27,7 +27,7 @@ const CartItems = ({ products, increaseProductQty, decreaseProductQty }) => {
         <Box component={"span"} fontWeight={"bold"}>
           {products.quantity}
         </Box>
-        <IconButton
+        <IconButton disabled={shouldProductAdd(products.id) ? false : true}
           onClick={() => {
             increaseProductQty(products.id);
           }}

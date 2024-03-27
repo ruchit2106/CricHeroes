@@ -33,7 +33,14 @@ export const Cart = ({ isCartOpen, handleCartClose }) => {
     dispatch(emptyCart());
   };
 
+  const shouldProductAdd = (productId) => {
+    const index = products.findIndex(product => product.id == productId);
 
+    if (index != -1 && products[index].quantity == products[index].availability)
+      return false;
+
+    return true;
+  }
   const getTotalAmount = (products) => {
     let totalAmount = 0;
     products.forEach((element) => {
@@ -67,6 +74,7 @@ export const Cart = ({ isCartOpen, handleCartClose }) => {
                 <CartItems
                   products={product}
                   decreaseProductQty={decreaseProductQty}
+                  shouldProductAdd={shouldProductAdd}
                   increaseProductQty={increaseProductQty}
                 />
               </Box>

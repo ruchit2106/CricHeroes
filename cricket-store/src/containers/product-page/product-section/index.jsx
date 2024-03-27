@@ -10,23 +10,37 @@ import { addItem } from "@/state/cartSlice";
 import Button from "@mui/material/Button";
 import Image from "next/image";
 import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { selectProducts } from "@/state/cartSlice";
 import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
-
+import Tooltip from '@mui/material/Tooltip';
 
 const ProductItem = ({ data }) => {
-  const { id, url, name, price } = data;
+  const { id, url, name, price, availability } = data;
   const quantity = 1;
-  const newItem = { id, url, name, price, quantity };
+  const newItem = { id, url, name, price, quantity, availability };
 
   const dispatch = useDispatch();
 
-  const showToastMessage = () =>{
+  const products = useSelector(selectProducts);
+
+  const showToastMessage = () => {
     toast.success("ITEM ADDED TO CART ", {
-      position:"bottom-left",
+      position: "bottom-left",
     });
   }
-  
+
+  const shouldButtonDisplayed = () => {
+    const index = products.findIndex(product => product.id == id);
+
+
+    if (availability == 0 || (index != -1 && products[index].quantity == products[index].availability))
+      return false;
+
+    return true;
+  }
+
   const addToCart = () => {
     dispatch(addItem(newItem));
     showToastMessage();
@@ -70,8 +84,19 @@ const ProductItem = ({ data }) => {
             justifyContent={"space-between"}
           >
             <Typography variant="h5">₹{data.price}</Typography>
-            <Button variant="contained" onClick={addToCart}>Add to Cart</Button>
-            <ToastContainer hideProgressBar={true} autoClose={2500}/>
+            {shouldButtonDisplayed() ?
+              (
+              <Button variant="contained" onClick={addToCart} >
+                Add to Cart
+              </Button>
+              )
+              :
+              (
+              // <Tooltip title="You've Reached Maximum Availability">
+                <Button disabled={true}>NO</Button>
+              // </Tooltip>
+              )}
+            <ToastContainer hideProgressBar={true} autoClose={2500} />
           </Box>
         </Grid>
       </Grid>
