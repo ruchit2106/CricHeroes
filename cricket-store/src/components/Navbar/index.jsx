@@ -106,7 +106,6 @@ const Navbar = () => {
                 sx={{
                   color: "white",
                   display: { xs: "flex", md: "none" },
-                  // flexGrow: 1,
                 }}
               >
                 <Link
@@ -115,7 +114,6 @@ const Navbar = () => {
                     textDecoration: "none",
                     color: "inherit",
                     fontWeight: "bold",
-                    // marginLeft: "1rem",
                     fontSize: "1.1rem",
                   }}
                 >
@@ -123,8 +121,8 @@ const Navbar = () => {
                 </Link>
               </Button>
               <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-                {pages.map((page) => (
-                  <Button sx={{ color: "white" }}>
+                {pages.map((page,index) => (
+                  <Button sx={{ color: "white" }} key={index}>
                     <Link
                       href={page.url}
                       style={{
