@@ -34,7 +34,6 @@ export const Cart = ({ isCartOpen, handleCartClose }) => {
 
   const shouldProductAdd = (productId) => {
     const index = products.findIndex((product) => product.id == productId);
-    console.log("NOT WITH", productId);
     return !(
       index !== -1 && products[index].quantity === products[index].availability
     );
