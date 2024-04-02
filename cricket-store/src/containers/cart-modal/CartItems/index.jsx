@@ -42,7 +42,7 @@ const CartItems = ({
             <AddCircleOutlineIcon />
           </IconButton>
         ) : (
-          <Tooltip title="You've Reached Maximum Limit">
+          <Tooltip title="Oops! You've reached maximum availability.">
             <Box component={"span"} sx={{ cursor: "no-drop" }}>
               <IconButton disabled={true}>
                 <AddCircleOutlineIcon />

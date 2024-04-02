@@ -69,6 +69,16 @@ const data = [
     shortDesc: "Adidas Running Shoes",
     detailDesc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, dolores! Enim consequuntur odit corporis veniam ipsam rem laborum fuga maiores?"
   },
+  {
+    id: "8",
+    name: "SG Bat",
+    availability: 0,
+    category: "Bat",
+    price: 500,
+    url: "/Bat.png",
+    shortDesc: "MRF Bat with Grip",
+    detailDesc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, dolores! Enim consequuntur odit corporis veniam ipsam rem laborum fuga maiores?"
+  },
 ];
 
 export default data;

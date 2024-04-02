@@ -54,13 +54,13 @@ const ProductItem = ({ data }) => {
 
   return (
     <Container maxWidth="md" sx={{ marginTop: "10rem" }}>
-      <Grid container>
-        <Grid item xs={6}>
-          <Container sx={{ textAlign: "center" }}>
-            <Image src={data.url} width={300} height={300} />
+      <Grid container spacing={5}>
+        <Grid item xs={12} sm={6}>
+          <Container sx={{ textAlign: "center"}}>
+            <Image src={data.url} width={280} height={280} />
           </Container>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12} sm={6}>
           <Typography variant="h4" fontWeight={"bold"}>
             {data.name}
           </Typography>
@@ -79,7 +79,11 @@ const ProductItem = ({ data }) => {
           </Typography>
           <Typography variant="body1" sx={{ marginBottom: "1rem" }}>
             Availability:
-            <Box component="span" fontWeight={"bold"} color={"green"}>
+            <Box
+              component="span"
+              fontWeight={"bold"}
+              color={data.availability === 0 ? "red" : "green"}
+            >
               {data.availability}
             </Box>
           </Typography>
@@ -95,7 +99,13 @@ const ProductItem = ({ data }) => {
                 Add to Cart
               </Button>
             ) : (
-              <Tooltip title="You've Reached Maximum Limit / Item is Out of Stock">
+              <Tooltip
+                title={
+                  data.availability === 0
+                    ? "This item is currently out of stock. Please check back later"
+                    : "Oops! You've reached maximum availability. Please review your cart."
+                }
+              >
                 <Box component={"span"} sx={{ cursor: "no-drop" }}>
                   <Button disabled variant="contained">
                     Add to Cart
@@ -103,10 +113,10 @@ const ProductItem = ({ data }) => {
                 </Box>
               </Tooltip>
             )}
-            <ToastContainer hideProgressBar={true} autoClose={2500} />
           </Box>
         </Grid>
       </Grid>
+      <ToastContainer hideProgressBar={true} autoClose={2500} />
     </Container>
   );
 };
